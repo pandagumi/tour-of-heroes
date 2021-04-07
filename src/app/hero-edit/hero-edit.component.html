@@ -1,0 +1,29 @@
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name"/> 
+    </div>
+    <br>
+    <div>
+        <label for="hero-description">Hero Description: </label>
+        <input id="hero-description" [(ngModel)]="hero.description" placeholder="Hero Description"/>
+    </div>
+    <br>
+    <div>
+        <label for="hero-image-url">Hero image url: </label>
+        <input id="hero-image-url" [(ngModel)]="hero.imageUrl" placeholder="Hero Image"/>
+    </div>
+    <br>
+    <div>
+        <select [(ngModel)]="hero.universe">
+            <option *ngFor="let universe of heroUniverses"[value]="universe">
+                {{universe | uppercase}}
+            </option>
+        </select>
+    </div>
+    <br>
+    <button (click)="goBack()">Go back</button>
+    <button (click)="save()">Save</button>
+</div>
