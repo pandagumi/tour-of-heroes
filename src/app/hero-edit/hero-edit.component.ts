@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hero, HeroUniverse } from '../hero';
 import { HeroService } from '../hero.service';
@@ -13,7 +13,7 @@ export class HeroEditComponent implements OnInit {
 
   hero?: Hero;
   heroUniverses: Array<HeroUniverse> = [HeroUniverse.DC, HeroUniverse.MARVEL];
-  
+
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -34,8 +34,8 @@ export class HeroEditComponent implements OnInit {
     this.location.back();
   }
 
-  save(): void {
-    this.heroService.updateHero(this.hero!)
-      .subscribe(() => this.goBack());
+  save(): void{
+    this.goBack();
   }
+
 }

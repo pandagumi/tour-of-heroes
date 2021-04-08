@@ -25,18 +25,36 @@ h2 {
 mat-card{
   height: fit-content;
   width: fit-content;
-  
+  max-height: 172px;
+  max-width: 170px;
+  text-align: left;
+  margin: none;
+}
+
+mat-card-header{
+  margin: none;
+  text-align: start;
+  width: fit-content;
+  height: fit-content;
+}
+
+mat-card-title{
+  font-size: 20px;
+}
+
+mat-card-subtitle{
+  font-style: oblique;
+  font-size: 15px;
 }
 
 a {
   background-color: none;
   border-radius: 5px;
-  padding: 2px;
-  font-size: 1rem;
+  padding: 0px;
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  text-align: center;
+  text-align: left;
   width: fit-content;
   height: fit-content;
   min-width: 70px;
@@ -61,6 +79,3 @@ a:hover {
   border-radius: 4px;
 }
 
-.header{
-  background-color: #fff;
-}

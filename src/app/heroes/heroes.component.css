@@ -77,10 +77,11 @@ button.delete {
   position: absolute;
   left: 210px;
   top: 5px;
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   color:  #525252;
   font-size: 1.1rem;
   padding: 1px 10px 3px 10px;
+  border-radius: 55px;
 }
 
 button.delete:hover {
