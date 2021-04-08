@@ -12,7 +12,12 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroEditComponent } from './hero-edit/hero-edit.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,18 +27,24 @@ import { HeroEditComponent } from './hero-edit/hero-edit.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    HeroEditComponent
+    HeroEditComponent,
   ],
   imports: [
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

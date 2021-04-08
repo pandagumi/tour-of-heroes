@@ -1,29 +1,36 @@
 <div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name"/> 
-    </div>
+    <h2>{{hero.name | uppercase}} - ID: {{hero.id}}</h2>
+
+    
+    <mat-form-field >
+        <mat-label>Hero name</mat-label>
+        <input matInput placeholder="Hero name" [(ngModel)]="hero.name">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="standard">
+        <mat-label>Hero description</mat-label>
+        <textarea matInput [(ngModel)]="hero.description"></textarea>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="standard">
+        <mat-label>Hero image URL</mat-label>
+        <input matInput [(ngModel)]="hero.imageUrl">
+      </mat-form-field>
     <br>
     <div>
-        <label for="hero-description">Hero Description: </label>
-        <input id="hero-description" [(ngModel)]="hero.description" placeholder="Hero Description"/>
+        <mat-form-field class="standard">
+            <mat-label>Universe</mat-label>
+            <select matNativeControl required>
+                <option *ngFor="let universe of heroUniverses"[value]="universe">
+                    {{universe | uppercase}}
+                </option>
+            </select>
+          </mat-form-field>
+
     </div>
     <br>
-    <div>
-        <label for="hero-image-url">Hero image url: </label>
-        <input id="hero-image-url" [(ngModel)]="hero.imageUrl" placeholder="Hero Image"/>
-    </div>
-    <br>
-    <div>
-        <select [(ngModel)]="hero.universe">
-            <option *ngFor="let universe of heroUniverses"[value]="universe">
-                {{universe | uppercase}}
-            </option>
-        </select>
-    </div>
-    <br>
-    <button (click)="goBack()">Go back</button>
-    <button (click)="save()">Save</button>
+    <button mat-raised-button (click)="goBack()">Go back</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
 </div>

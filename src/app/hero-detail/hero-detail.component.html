@@ -2,6 +2,6 @@
 
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
-    <button (click)="goBack()">Go back</button>
-    <button [routerLink]="['/edit', hero.id]">Edit</button>
+    <button mat-raised-button (click)="goBack()">Go back</button>
+    <button mat-raised-button [routerLink]="['/edit', hero.id]">Edit</button>
 </div>
