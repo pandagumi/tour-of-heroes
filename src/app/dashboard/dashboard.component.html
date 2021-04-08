@@ -3,9 +3,8 @@
     <a *ngFor="let hero of heroes" 
         routerLink="/detail/{{hero.id}}">
         <mat-card class="example-card">
-          <div mat-card-avatar>
-            <img src="{{hero.imageUrl}}" alt="Photo of {{hero.name}}">
-          </div>  
+            <img mat-card-image src="{{hero.imageUrl}}" alt="Photo of {{hero.name}}">
+          
           <mat-card-header>
               <mat-card-title>{{hero.name}}</mat-card-title>
               <mat-card-subtitle>{{hero.description}}</mat-card-subtitle>
