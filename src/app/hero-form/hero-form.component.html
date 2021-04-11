@@ -7,18 +7,36 @@
             <mat-label>Hero name</mat-label>
             <input matInput placeholder="Hero name" formControlName="name">
             <!--falta personalização de erros-->
+            <mat-error *ngIf="formGroup.get('name').hasError('required')">
+                O nome é <strong>obrigatório</strong>
+            </mat-error>
+            <mat-error *ngIf="formGroup.get('name').hasError('minlength')">
+                O nome aceita no mínimo <strong>3</strong> caracteres
+            </mat-error>
+            <mat-error *ngIf="formGroup.get('name').hasError('maxlength')">
+                O nome aceita no máximo <strong>30</strong> caracteres
+            </mat-error>
         </mat-form-field>
         <br>
 
         <mat-form-field class="standard">
             <mat-label>Hero description</mat-label>
             <textarea matInput formControlName="description"></textarea>
+            <mat-error *ngIf="formGroup.get('description').hasError('minlength')">
+                A descrição aceita no mínimo <strong>3</strong> caracteres
+            </mat-error>
         </mat-form-field>
         <br>
 
         <mat-form-field class="standard">
             <mat-label>Hero image URL</mat-label>
             <input matInput placeholder="Hero image" formControlName="imageUrl">
+            <mat-error *ngIf="formGroup.get('imageUrl').hasError('required')">
+                A imagem é <strong>obrigatória</strong>
+            </mat-error>
+            <mat-error *ngIf="formGroup.get('imageUrl').hasError('pattern')">
+                Insira uma URL <strong>válida</strong>
+            </mat-error>
         </mat-form-field>
         <br>
         <div>

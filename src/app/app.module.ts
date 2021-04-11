@@ -21,7 +21,7 @@ import { HeroNewComponent } from './hero-new/hero-new.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule, FormBuilder, FormsModule } from '@angular/forms';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { ReactiveFormsModule, FormBuilder, FormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

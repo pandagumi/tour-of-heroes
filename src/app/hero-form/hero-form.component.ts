@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HeroFormComponent implements OnInit{
 
-  formGroup!: FormGroup;
+  formGroup: FormGroup;
 
   @Input() hero?: Hero;
 

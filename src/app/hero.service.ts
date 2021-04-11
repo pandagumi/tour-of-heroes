@@ -12,13 +12,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class HeroService {
   private heroesUrl = 'https://api-default-309921.rj.r.appspot.com';
 
-  getHeroes(): Observable<HeroGetResponse> {
-    return this.http.get<HeroGetResponse>(`${this.heroesUrl}/heroes`)
+  // Eu adicionei o parametro cursor como opcional
+getHeroes(cursor?: string): Observable<HeroGetResponse> {
+  // Na url, eu adicionei um parametro na url com uma "?" e na interpolação eu coloquei parae enviar o cursor ou '' (?cursor=${cursor || ''})
+  // O motivo desssa condição na interpolação é para não enviar o cursor como "undefined" caso ele não exista.
+  return this.http.get<HeroGetResponse>(`${this.heroesUrl}/heroes?cursor=${cursor || ''}`)
     .pipe(
-      tap((_) => this.log('fetched heroes')),
+      tap(_ => this.log('fetched heroes')),
       catchError(this.handleError<HeroGetResponse>('getHeroes', {heroes: [], cursor: ""}))
     );
-  }
+}
 
   getHero(id: string): Observable<Hero> {
     const url = `${this.heroesUrl}/hero/${id}`;
